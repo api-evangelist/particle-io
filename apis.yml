@@ -4,7 +4,7 @@ description: Particle is an end-to-end IoT platform combining cellular and Wi-Fi
   Boron, Tracker, B-SoM, M-SoM), firmware, and a Device Cloud. The Particle Device Cloud exposes a REST API for fleet management,
   device control, cloud functions and variables, webhooks and integrations, OTA firmware updates, SIM management, and customer
   and product administration.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/particle-io/refs/heads/main/apis.yml
 created: '2026-05-23'
 modified: '2026-05-23'
