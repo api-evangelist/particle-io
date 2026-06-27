@@ -138,7 +138,7 @@ common:
   url: https://docs.particle.io/
 - type: Documentation
   url: https://docs.particle.io/reference/cloud-apis/api/
-- type: SDK
+- type: SDKs
   url: https://github.com/particle-iot/particle-api-js
 - type: CLI
   url: https://docs.particle.io/reference/developer-tools/cli/
