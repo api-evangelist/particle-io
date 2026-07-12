@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/particle-io-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: OAuth2 access token
+  description: |-
+    Pass `Authorization: Bearer {access_token}`. Tokens are issued via
+    `POST /oauth/token`.
+  sources:
+  - openapi/particle-io-openapi.yml

@@ -132,6 +132,12 @@ apis:
   - type: Documentation
     url: https://docs.particle.io/reference/cloud-apis/api/#sim-cards
 common:
+- type: VulnerabilityDisclosure
+  url: security/particle-io-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/particle-io-domain-security.yml
+- type: Authentication
+  url: authentication/particle-io-authentication.yml
 - type: Website
   url: https://www.particle.io/
 - type: Developer
