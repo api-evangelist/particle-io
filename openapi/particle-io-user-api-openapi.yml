@@ -1,0 +1,76 @@
+openapi: 3.1.0
+info:
+  title: Particle Cloud Access Tokens User API
+  description: 'The Particle Cloud API exposes IoT device management, product fleet
+
+    management, OAuth client and token administration, diagnostics, SIM
+
+    management and user account endpoints.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Particle
+    url: https://docs.particle.io/reference/cloud-apis/api/
+servers:
+- url: https://api.particle.io
+  description: Particle Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: User
+paths:
+  /v1/user:
+    get:
+      summary: Get the current user
+      responses:
+        '200':
+          description: User profile.
+      tags:
+      - User
+    put:
+      summary: Update the current user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: User updated.
+      tags:
+      - User
+    delete:
+      summary: Delete the current user account
+      responses:
+        '200':
+          description: User deleted.
+      tags:
+      - User
+  /v1/user/password-reset:
+    post:
+      summary: Request a password reset email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+      responses:
+        '200':
+          description: Reset email sent.
+      tags:
+      - User
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OAuth2 access token
+      description: 'Pass `Authorization: Bearer {access_token}`. Tokens are issued via
+
+        `POST /oauth/token`.
+
+        '

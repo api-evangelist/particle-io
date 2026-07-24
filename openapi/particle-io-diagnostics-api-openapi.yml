@@ -1,0 +1,75 @@
+openapi: 3.1.0
+info:
+  title: Particle Cloud Access Tokens Diagnostics API
+  description: 'The Particle Cloud API exposes IoT device management, product fleet
+
+    management, OAuth client and token administration, diagnostics, SIM
+
+    management and user account endpoints.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Particle
+    url: https://docs.particle.io/reference/cloud-apis/api/
+servers:
+- url: https://api.particle.io
+  description: Particle Cloud production
+security:
+- BearerAuth: []
+tags:
+- name: Diagnostics
+paths:
+  /v1/diagnostics/{deviceId}/update:
+    post:
+      summary: Refresh device vitals
+      parameters:
+      - in: path
+        name: deviceId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Vitals refreshed.
+      tags:
+      - Diagnostics
+  /v1/diagnostics/{deviceId}/last:
+    get:
+      summary: Get last-known device vitals
+      parameters:
+      - in: path
+        name: deviceId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Last vitals.
+      tags:
+      - Diagnostics
+  /v1/diagnostics/{deviceId}:
+    get:
+      summary: Get historical device vitals
+      parameters:
+      - in: path
+        name: deviceId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Historical vitals.
+      tags:
+      - Diagnostics
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: OAuth2 access token
+      description: 'Pass `Authorization: Bearer {access_token}`. Tokens are issued via
+
+        `POST /oauth/token`.
+
+        '
